@@ -3,44 +3,44 @@
 
 import boto3
 
+def find_items_in_array(itemarray,itemstofind):
+    items = []
 
-def detect_text_local_file(photo):
-    client = boto3.client('rekognition')
+    for item in itemstofind:
+        if item in itemarray:
+            items.append(item)
 
-    with open(photo, 'rb') as image:
+    return items
+
+
+def find_groceries(items):
+    #find major grocery items: steak, beef, pork, chicken?
+    itemstofind = ["EGGS","MILK","CHEESE","CHN","GND B","NY","PORK","ONION"]
+    groceries = find_items_in_array(items,itemstofind)
+    return groceries
+
+
+def detect_text_file(photo):
+      client = boto3.client('rekognition')
+
+      with open(photo, 'rb') as image:
         response = client.detect_text(Image={'Bytes': image.read()})
 
-    print('Detected Texts in '+photo)
-    for text in response['TextDetections']:
-        print(text['DetectedText'] + ' : ' + str(text['Confidence']))
-
-    return len(response['TextDetections'])
-
-
-def detect_labels_local_file(photo):
-
-    client = boto3.client('rekognition')
-
-    with open(photo, 'rb') as image:
-        response = client.detect_labels(Image={'Bytes': image.read()})
-
-    print('Detected labels in ' + photo)
-    for label in response['Labels']:
-        print(label['Name'] + ' : ' + str(label['Confidence']))
-
-    return len(response['Labels'])
+      items = [text['DetectedText'] for text in response['TextDetections']]
+      
+      return items
 
 
 def main():
-    photo = 'photo.jpg'
+    photo = input("Enter image file name: ")
 
-    label_count = detect_labels_local_file(photo)
-    print("Labels detected: " + str(label_count))
-
-    print("---")
-
-    text_count = detect_text_local_file(photo)
-    print("Texts detected: " + str(text_count))
+    grocerylist = find_groceries(detect_text_file(photo))
+    
+    if not grocerylist :
+        print("no grocery found on the receipt :( ")
+    else :
+        print("GROCERIES FOUND: ")
+        print(*grocerylist, sep=',\n')
 
 
 if __name__ == "__main__":
