@@ -12,8 +12,6 @@ This is Guild Education's Learnathon project by Soobin Kittredge (Salesforce Dev
 - add boto3 as gitmodule
 - seems like the python works as intended in my machine
 
-&nbsp;
-
 #### try to push this to cloud maybe?
 
 - create new python & adjust to be lambda function

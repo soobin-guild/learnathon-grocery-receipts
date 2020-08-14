@@ -15,7 +15,7 @@ def find_items_in_array(itemarray,itemstofind):
 
 def find_groceries(items):
     #find major grocery items: steak, beef, pork, chicken?
-    itemstofind = ["EGGS","MILK","CHEESE","CHN","GND B","NY","PORK","ONION"]
+    itemstofind = ["EGGS","MILK","CHEESE","CHN","GND B","NY","PORK","ONION","SSG","BROCCOLI","BUNS"]
     groceries = find_items_in_array(items,itemstofind)
     return groceries
 
