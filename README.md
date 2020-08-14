@@ -1,5 +1,7 @@
 # Show me what you bought - Receipt parser
 
+![demogif](demogif.gif)
+
 This is Guild Education's Learnathon project by Soobin Kittredge (Salesforce Developer)
 
 #### making the code work
