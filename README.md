@@ -6,8 +6,10 @@ This is Guild Education's Learnathon project by Soobin Kittredge (Salesforce Dev
 - Clone example Python code for testing
 - install boto3 package for python (https://github.com/boto/boto3)
 - Modify example code to call detect_text function
-- git init
-- remove unused function
+- follow instruction on boto3 to install relevant packages/modules (https://github.com/boto/boto3)
+- seems like the python works as intended in my machine
+
+- create new python & adjust to be lambda function
 - put python in lambda service
 - trying to figure out how to make api endpoint for calling lambda python?
 - create website to call the lambda
