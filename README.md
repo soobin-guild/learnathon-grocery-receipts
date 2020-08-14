@@ -2,12 +2,19 @@
 
 This is Guild Education's Learnathon project by Soobin Kittredge (Salesforce Developer)
 
+#### making the code work
+
 - Create AWS user for Rekognition
 - Clone example Python code for testing
 - install boto3 package for python (https://github.com/boto/boto3)
 - Modify example code to call detect_text function
 - follow instruction on boto3 to install relevant packages/modules (https://github.com/boto/boto3)
+- add boto3 as gitmodule
 - seems like the python works as intended in my machine
+
+&nbsp;
+
+#### try to push this to cloud maybe?
 
 - create new python & adjust to be lambda function
 - put python in lambda service
