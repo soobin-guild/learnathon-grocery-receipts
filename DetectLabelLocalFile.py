@@ -6,16 +6,16 @@ import boto3
 def find_items_in_array(itemarray,itemstofind):
     items = []
 
-    for item in itemstofind:
-        if item in itemarray:
+    for item in itemarray:
+        if item in itemstofind:
             items.append(item)
 
     return items
 
 
 def find_groceries(items):
-    #find major grocery items: steak, beef, pork, chicken?
-    itemstofind = ["EGGS","MILK","CHEESE","CHN","GND B","NY","PORK","ONION","SSG","BROCCOLI","BUNS"]
+    #find major grocery items
+    itemstofind = ["EGGS","MILK","CHEESE","CHN","GND B","NY","PORK","ONION","SSG","BROCCOLI","BUNS","POTATOES"]
     groceries = find_items_in_array(items,itemstofind)
     return groceries
 
